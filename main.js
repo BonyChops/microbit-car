@@ -1,6 +1,5 @@
-var microBitBle;
-
-let gpioPort = {};
+let microBitBle,
+  gpioPort = {};
 
 async function connect() {
   microBitBle = await microBitBleFactory.connect();
