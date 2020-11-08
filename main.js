@@ -12,8 +12,8 @@ const connect = async () => {
   gpioPort[8] = mbGpioPorts.get(8);
   await gpioPort[0].export("out"); //port0 out
   await gpioPort[1].export("out"); //port1 out
-  await gpioPort[2].export("out"); //port1 out
-  await gpioPort[8].export("out"); //port1 out
+  await gpioPort[2].export("out"); //port2 out
+  await gpioPort[8].export("out"); //port8 out
 };
 
 const disconnect = async () => {
