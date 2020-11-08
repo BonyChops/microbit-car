@@ -1,7 +1,7 @@
-let microBitBle,
-  gpioPort = {};
+let microBitBle;
+let gpioPort = {};
 
-async function connect() {
+const connect = async() => {
   microBitBle = await microBitBleFactory.connect();
   msg.innerHTML = "micro:bit BLE接続しました。";
   const gpioAccess = await microBitBle.requestGPIOAccess();
@@ -16,12 +16,12 @@ async function connect() {
   await gpioPort[8].export("out"); //port1 out
 }
 
-async function disconnect() {
+const disconnect = () => {
   await microBitBle.disconnect();
   msg.innerHTML = "micro:bit BLE接続を切断しました。";
 }
 
-async function motorControl(motorCtrl) {
+const motorControl = (motorCtrl) => {
   if (motorCtrl === "fwd") {
     await gpioPort[0].write(1);
     await gpioPort[1].write(0);
