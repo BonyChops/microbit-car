@@ -4,8 +4,8 @@ let microBitBle,
 async function connect() {
   microBitBle = await microBitBleFactory.connect();
   msg.innerHTML = "micro:bit BLE接続しました。";
-  var gpioAccess = await microBitBle.requestGPIOAccess();
-  var mbGpioPorts = gpioAccess.ports;
+  const gpioAccess = await microBitBle.requestGPIOAccess();
+  const mbGpioPorts = gpioAccess.ports;
   gpioPort[0] = mbGpioPorts.get(0);
   gpioPort[1] = mbGpioPorts.get(1);
   gpioPort[2] = mbGpioPorts.get(2);
